@@ -11,25 +11,58 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Supplier"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{B7A9BE34-5E61-46C4-AB04-A9E260B7107F}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{FAB8C89F-08A6-4645-B036-D1459C7BD556}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{06C56EC2-7FB5-4C54-B950-27BFD0362733}"
+      DTS:ObjectName=".\SQL2022.DataWarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Supplier-{06C56EC2-7FB5-4C54-B950-27BFD0362733}.\SQL2022.DataWarehouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DF"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{D9CCA7F6-D6C2-40EB-A5C3-BFB0C217DA7F}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:refId="Package\Truncate Staging table Goa"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{18E4911B-39C9-4FDE-B856-1E4209E09B41}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DF"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Truncate Staging table Goa"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
-        <pipeline
-          version="1" />
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{06C56EC2-7FB5-4C54-B950-27BFD0362733}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STG_Supplier_Goa" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging table UK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{67814b28-c387-4c86-b6ad-71779b481429}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging table UK"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{06C56EC2-7FB5-4C54-B950-27BFD0362733}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STG_Supplier_UK" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -46,9 +79,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="92,41.6"
-          Id="Package\DF"
-          TopLeft="473.333307471542,51.9999996383985" />
+          Size="205.6,41.6"
+          Id="Package\Truncate Staging table Goa"
+          TopLeft="118.333326867885,60.6666662447983" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Truncate Staging table UK"
+          TopLeft="404.166644583975,63.4666669318414" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
