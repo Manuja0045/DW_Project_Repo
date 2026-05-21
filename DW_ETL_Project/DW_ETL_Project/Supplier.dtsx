@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Supplier"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{31C835CE-A205-439D-98F7-08FCB05F85F8}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{3177C8CA-D49A-4654-8EC9-8B4E445B4487}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -890,157 +890,6 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT- To perform insert update\Datawarehouse"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Datawarehouse"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DW_Supplier]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DFT- To perform insert update\Datawarehouse.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].Columns[id]"
-                      cachedDataType="i4"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[id]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].Columns[suppliername]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="suppliername"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].Columns[active]"
-                      cachedDataType="bool"
-                      cachedName="active"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[active]"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].Columns[company]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="company"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[company]"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[company]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
-                    <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="suppliername" />
-                    <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[active]"
-                      dataType="bool"
-                      name="active" />
-                    <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[company]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="company" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not"
               componentClassID="Microsoft.ConditionalSplit"
               contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -1149,13 +998,13 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT- To perform insert update\insert or update to Datawarehouse"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="insert or update to Datawarehouse"
+              refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="insert new entries to Datawarehouse"
               usesDispositions="true"
-              version="2">
+              version="4">
               <properties>
                 <property
                   dataType="System.Int32"
@@ -1163,24 +1012,50 @@
                   name="CommandTimeout">0</property>
                 <property
                   dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DW_Supplier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
                   description="The SQL command to be executed."
-                  expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DW_Supplier
-SET
-    suppliername = ?,
-    active = ?
-WHERE
-    id = ?
-AND company = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
                   name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Connections[OleDbConnection]"
+                  refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
                   connectionManagerRefId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1188,119 +1063,84 @@ AND company = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
+                  refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
-                  name="OLE DB Command Input">
+                  name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].Columns[suppliername]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].Columns[suppliername]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="suppliername"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
                       lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]" />
                     <inputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].Columns[active]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].Columns[active]"
                       cachedDataType="bool"
                       cachedName="active"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[active]"
                       lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]" />
                     <inputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].Columns[id]"
-                      cachedDataType="i4"
-                      cachedName="id"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[id]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].Columns[company]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].Columns[company]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="company"
-                      externalMetadataColumnId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[company]"
                       lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[company]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
                       codePage="1252"
                       dataType="str"
                       length="100"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
+                      name="suppliername" />
                     <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[active]"
                       dataType="bool"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
+                      name="active" />
                     <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input].ExternalColumns[company]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
+                      name="company" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Error Output]"
+                  refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input]">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2020,11 +1860,171 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\DFT- To perform insert update\update to Datawarehouse"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="update to Datawarehouse"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DW_Supplier
+SET
+    suppliername = ?,
+    active = ?
+WHERE
+    id = ?
+AND company = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT- To perform insert update\update to Datawarehouse.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].Columns[suppliername]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="suppliername"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].Columns[active]"
+                      cachedDataType="bool"
+                      cachedName="active"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].Columns[company]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="company"
+                      externalMetadataColumnId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[company]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="bool"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- To perform insert update\update to Datawarehouse.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\DFT- To perform insert update.Paths[Case 1]"
-              endId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input]"
+              endId="Package\DFT- To perform insert update\update to Datawarehouse.Inputs[OLE DB Command Input]"
               name="Case 1"
               startId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Case 1]" />
             <path
@@ -2034,7 +2034,7 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
               startId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT- To perform insert update.Paths[Lookup No Match Output]"
-              endId="Package\DFT- To perform insert update\Datawarehouse.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT- To perform insert update\insert new entries to Datawarehouse.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup No Match Output]" />
             <path
@@ -2065,7 +2065,7 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging table Goa"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2082,7 +2082,7 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging table UK"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2138,6 +2138,18 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="245.6,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)"
+          TopLeft="95.8333280972311,149.933332290716" />
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\DFT - Source to Staging Table(UK)"
+          TopLeft="379.166645949914,146.666666353279" />
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\DFT- To perform insert update"
+          TopLeft="247.499986477197,246.999998282393" />
+        <NodeLayout
           Size="205.6,41.6"
           Id="Package\Truncate Staging table Goa"
           TopLeft="118.333326867885,60.6666662447983" />
@@ -2145,10 +2157,6 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
           Size="200,41.6"
           Id="Package\Truncate Staging table UK"
           TopLeft="404.166644583975,63.4666669318414" />
-        <NodeLayout
-          Size="245.6,41.6"
-          Id="Package\DFT - Source to Staging Table(Goa)"
-          TopLeft="95.8333280972311,149.933332290716" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="219.883327482558,102.266666244798">
@@ -2171,10 +2179,6 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="240,41.6"
-          Id="Package\DFT - Source to Staging Table(UK)"
-          TopLeft="379.166645949914,146.666666353279" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="501.666645266945,105.066666931841">
@@ -2197,10 +2201,6 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="218.4,41.6"
-          Id="Package\DFT- To perform insert update"
-          TopLeft="247.499986477197,246.999998282393" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="218.633328097231,191.533332290716">
@@ -2276,19 +2276,19 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
     design-time-name="Package\DFT - Source to Staging Table(Goa)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\DFT - Source to Staging Table(Goa)\Goa Source Data"
           TopLeft="318.333315940368,27.7333331404792" />
         <NodeLayout
-          Size="230.4,41.6"
-          Id="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table"
-          TopLeft="279.166651413673,198.466665286554" />
-        <NodeLayout
           Size="222.4,41.6"
           Id="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa)"
           TopLeft="279.999984701475,114.399999204477" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table"
+          TopLeft="279.166651413673,198.466665286554" />
         <EdgeLayout
           Id="Package\DFT - Source to Staging Table(Goa).Paths[OLE DB Source Output]"
           TopLeft="394.366650320921,69.3333331404792">
@@ -2308,7 +2308,9 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2330,7 +2332,9 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2366,41 +2370,19 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
     design-time-name="Package\DFT - Source to Staging Table(UK)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="216.8,41.6"
-          Id="Package\DFT - Source to Staging Table(UK)\Derived column company(UK)"
-          TopLeft="279.999984701475,114.399999204477" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="225.6,41.6"
           Id="Package\DFT - Source to Staging Table(UK)\Stage Data in Staging UK Table"
           TopLeft="279.166651413673,198.466665286554" />
         <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\DFT - Source to Staging Table(UK)\Derived column company(UK)"
+          TopLeft="279.999984701475,114.399999204477" />
+        <NodeLayout
           Size="153.6,41.6"
           Id="Package\DFT - Source to Staging Table(UK)\UK Source Data"
           TopLeft="318.333315940368,27.7333331404792" />
-        <EdgeLayout
-          Id="Package\DFT - Source to Staging Table(UK).Paths[Derived Column Output]"
-          TopLeft="390.183318057574,155.999999204477">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.466666082077"
-              Start="0,0"
-              End="0,34.966666082077">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.966666082077" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - Source to Staging Table(UK).Paths[OLE DB Source Output]"
           TopLeft="391.766650320921,69.3333331404792">
@@ -2420,7 +2402,33 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Source to Staging Table(UK).Paths[Derived Column Output]"
+          TopLeft="390.183318057574,155.999999204477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.466666082077"
+              Start="0,0"
+              End="0,34.966666082077">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.966666082077" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2458,43 +2466,59 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\DFT- To perform insert update\Staging table Goa"
-          TopLeft="210.999996855855,40.9999993890524" />
-        <NodeLayout
           Size="160,41.6"
           Id="Package\DFT- To perform insert update\Staging Table UK"
           TopLeft="563.999991595745,41.9999993741512" />
         <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\DFT- To perform insert update\Lookup"
+          TopLeft="551.999991774559,214.99999679625" />
+        <NodeLayout
           Size="120,41.6"
           Id="Package\DFT- To perform insert update\Union All"
           TopLeft="401.999994009733,144.999997839332" />
+        <NodeLayout
+          Size="303.2,41.6"
+          Id="Package\DFT- To perform insert update\if suppliername and active flag is matching or not"
+          TopLeft="479.999992847443,340.999994918704" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\DFT- To perform insert update\Staging table Goa"
+          TopLeft="210.999996855855,40.9999993890524" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\DFT- To perform insert update\update to Datawarehouse"
+          TopLeft="533.166657562885,430.866660253141" />
+        <NodeLayout
+          Size="247.2,41.6"
+          Id="Package\DFT- To perform insert update\insert new entries to Datawarehouse"
+          TopLeft="196.333331864741,301.599995526473" />
         <EdgeLayout
-          Id="Package\DFT- To perform insert update.Paths[OLE DB Source Output]"
-          TopLeft="291.799996855855,82.5999993890524">
+          Id="Package\DFT- To perform insert update.Paths[Union All Output 1]"
+          TopLeft="461.999994009733,186.599997839332">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.533330487211,62.3999984502792"
+              EndConnector="146.399997764826,28.3999989569188"
               Start="0,0"
-              End="151.533330487211,54.8999984502792">
+              End="146.399997764826,20.8999989569188">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9473675034548" />
+                    End="0,10.1999994784594" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.9473675034548"
-                    Point2="0,36.9473675034548"
-                    Point3="4,36.9473675034548" />
+                    Point1="0,10.1999994784594"
+                    Point2="0,14.1999994784594"
+                    Point3="4,14.1999994784594" />
                   <mssgle:LineSegment
-                    End="147.533330487211,36.9473675034548" />
+                    End="142.399997764826,14.1999994784594" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.533330487211,36.9473675034548"
-                    Point2="151.533330487211,36.9473675034548"
-                    Point3="151.533330487211,40.9473675034548" />
+                    Point1="142.399997764826,14.1999994784594"
+                    Point2="146.399997764826,14.1999994784594"
+                    Point3="146.399997764826,18.1999994784594" />
                   <mssgle:LineSegment
-                    End="151.533330487211,54.8999984502792" />
+                    End="146.399997764826,20.8999989569188" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2537,46 +2561,74 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="303.2,41.6"
-          Id="Package\DFT- To perform insert update\if suppliername and active flag is matching or not"
-          TopLeft="479.999992847443,340.999994918704" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\DFT- To perform insert update\Lookup"
-          TopLeft="551.999991774559,214.99999679625" />
         <EdgeLayout
-          Id="Package\DFT- To perform insert update.Paths[Union All Output 1]"
-          TopLeft="461.999994009733,186.599997839332">
+          Id="Package\DFT- To perform insert update.Paths[OLE DB Source Output]"
+          TopLeft="291.799996855855,82.5999993890524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.399997764826,28.3999989569188"
+              EndConnector="151.533330487211,62.3999984502792"
               Start="0,0"
-              End="146.399997764826,20.8999989569188">
+              End="151.533330487211,54.8999984502792">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.1999994784594" />
+                    End="0,32.9473675034548" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.1999994784594"
-                    Point2="0,14.1999994784594"
-                    Point3="4,14.1999994784594" />
+                    Point1="0,32.9473675034548"
+                    Point2="0,36.9473675034548"
+                    Point3="4,36.9473675034548" />
                   <mssgle:LineSegment
-                    End="142.399997764826,14.1999994784594" />
+                    End="147.533330487211,36.9473675034548" />
                   <mssgle:CubicBezierSegment
-                    Point1="142.399997764826,14.1999994784594"
-                    Point2="146.399997764826,14.1999994784594"
-                    Point3="146.399997764826,18.1999994784594" />
+                    Point1="147.533330487211,36.9473675034548"
+                    Point2="151.533330487211,36.9473675034548"
+                    Point3="151.533330487211,40.9473675034548" />
                   <mssgle:LineSegment
-                    End="146.399997764826,20.8999989569188" />
+                    End="151.533330487211,54.8999984502792" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT- To perform insert update.Paths[Lookup No Match Output]"
+          TopLeft="590.933325107892,256.59999679625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-270.999993243152,44.9999987302228"
+              Start="0,0"
+              End="-270.999993243152,37.4999987302228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.377621859056" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.377621859056"
+                    Point2="0,18.377621859056"
+                    Point3="-4,18.377621859056" />
+                  <mssgle:LineSegment
+                    End="-266.999993243152,18.377621859056" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-266.999993243152,18.377621859056"
+                    Point2="-270.999993243152,18.377621859056"
+                    Point3="-270.999993243152,22.377621859056" />
+                  <mssgle:LineSegment
+                    End="-270.999993243152,37.4999987302228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-191.306383340326,23.377621859056,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2603,102 +2655,33 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\DFT- To perform insert update\Datawarehouse"
-          TopLeft="232.999996528029,298.999995544553" />
-        <EdgeLayout
-          Id="Package\DFT- To perform insert update.Paths[Lookup No Match Output]"
-          TopLeft="590.933325107892,256.59999679625">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-282.333328579863,42.3999987483024"
-              Start="0,0"
-              End="-282.333328579863,34.8999987483024">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.3158036846214" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.3158036846214"
-                    Point2="0,17.3158036846214"
-                    Point3="-4,17.3158036846214" />
-                  <mssgle:LineSegment
-                    End="-278.333328579863,17.3158036846214" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-278.333328579863,17.3158036846214"
-                    Point2="-282.333328579863,17.3158036846214"
-                    Point3="-282.333328579863,21.3158036846214" />
-                  <mssgle:LineSegment
-                    End="-282.333328579863,34.8999987483024" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-196.973051008682,22.3158036846214,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="237.6,41.6"
-          Id="Package\DFT- To perform insert update\insert or update to Datawarehouse"
-          TopLeft="503.999992489815,429.999993592501" />
         <EdgeLayout
           Id="Package\DFT- To perform insert update.Paths[Case 1]"
-          TopLeft="631.599992847443,382.599994918704">
+          TopLeft="631.783325205164,382.599994918704">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.80000035762782,47.3999986737966"
+              EndConnector="0,48.2666653344371"
               Start="0,0"
-              End="-8.80000035762782,39.8999986737966">
+              End="0,40.7666653344371">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.6999993368983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.6999993368983"
-                    Point2="0,23.6999993368983"
-                    Point3="-4,23.6999993368983" />
-                  <mssgle:LineSegment
-                    End="-4.80000035762782,23.6999993368983" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.80000035762782,23.6999993368983"
-                    Point2="-8.80000035762782,23.6999993368983"
-                    Point3="-8.80000035762782,27.6999993368983" />
-                  <mssgle:LineSegment
-                    End="-8.80000035762782,39.8999986737966" />
+                    End="0,40.7666653344371" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.6180861163139,28.6999993368983,30.436171875,9.5537109375"
+              BoundingBox="-15.2180859375,15.6064771984685,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT- To perform insert update\Staging table Goa">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT- To perform insert update\Staging Table UK">
     <Properties>
@@ -2718,7 +2701,7 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2728,7 +2711,7 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2736,7 +2719,20 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT- To perform insert update\Datawarehouse">
+    design-time-name="Package\DFT- To perform insert update\Staging table Goa">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT- To perform insert update\insert new entries to Datawarehouse">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
