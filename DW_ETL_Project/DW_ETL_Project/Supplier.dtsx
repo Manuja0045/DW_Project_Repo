@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Supplier"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{65EC8465-873D-425F-B1EA-DDFAFD6BC831}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{31C835CE-A205-439D-98F7-08FCB05F85F8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -890,114 +890,6 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT- To perform insert update\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input].Columns[suppliername]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="suppliername"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input].Columns[active]"
-                      cachedDataType="bool"
-                      cachedName="active"
-                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input].Columns[DW_suppliername]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="DW_suppliername"
-                      lineageId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_suppliername]" />
-                    <inputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input].Columns[DW_active]"
-                      cachedDataType="bool"
-                      cachedName="DW_active"
-                      lineageId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_active]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT- To perform insert update\Conditional Split.Outputs[Case 1]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Case 1"
-                  synchronousInputId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]} != #{Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_suppliername]} || #{Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]} != #{Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_active]}</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">suppliername != DW_suppliername || active != DW_active</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT- To perform insert update\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DFT- To perform insert update\Datawarehouse"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1141,6 +1033,114 @@
                       refId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT- To perform insert update\Datawarehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="if suppliername and active flag is matching or not"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input].Columns[suppliername]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="suppliername"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input].Columns[active]"
+                      cachedDataType="bool"
+                      cachedName="active"
+                      lineageId="Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input].Columns[DW_suppliername]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="DW_suppliername"
+                      lineageId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_suppliername]" />
+                    <inputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input].Columns[DW_active]"
+                      cachedDataType="bool"
+                      cachedName="DW_active"
+                      lineageId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_active]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[suppliername]} != #{Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_suppliername]} || #{Package\DFT- To perform insert update\Union All.Outputs[Union All Output 1].Columns[active]} != #{Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output].Columns[DW_active]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">suppliername != DW_suppliername || active != DW_active</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2026,10 +2026,10 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
               refId="Package\DFT- To perform insert update.Paths[Case 1]"
               endId="Package\DFT- To perform insert update\insert or update to Datawarehouse.Inputs[OLE DB Command Input]"
               name="Case 1"
-              startId="Package\DFT- To perform insert update\Conditional Split.Outputs[Case 1]" />
+              startId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Outputs[Case 1]" />
             <path
               refId="Package\DFT- To perform insert update.Paths[Lookup Match Output]"
-              endId="Package\DFT- To perform insert update\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\DFT- To perform insert update\if suppliername and active flag is matching or not.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\DFT- To perform insert update\Lookup.Outputs[Lookup Match Output]" />
             <path
@@ -2538,9 +2538,9 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\DFT- To perform insert update\Conditional Split"
-          TopLeft="509.999992400408,319.999995231629" />
+          Size="303.2,41.6"
+          Id="Package\DFT- To perform insert update\if suppliername and active flag is matching or not"
+          TopLeft="479.999992847443,340.999994918704" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\DFT- To perform insert update\Lookup"
@@ -2581,37 +2581,25 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT- To perform insert update.Paths[Lookup Match Output]"
-          TopLeft="625.866658441226,256.59999679625">
+          TopLeft="628.733325644334,256.59999679625">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-39.0666660408181,63.3999984353781"
+              EndConnector="0,84.3999981224536"
               Start="0,0"
-              End="-39.0666660408181,55.8999984353781">
+              End="0,76.8999981224536">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.8920273330495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8920273330495"
-                    Point2="0,25.8920273330495"
-                    Point3="-4,25.8920273330495" />
-                  <mssgle:LineSegment
-                    End="-35.0666660408181,25.8920273330495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-35.0666660408181,25.8920273330495"
-                    Point2="-39.0666660408181,25.8920273330495"
-                    Point3="-39.0666660408181,29.8920273330495" />
-                  <mssgle:LineSegment
-                    End="-39.0666660408181,55.8999984353781" />
+                    End="0,76.8999981224536" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-67.724719739159,30.8920273330495,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,32.6453115612268,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2658,40 +2646,40 @@ where [refTable].[id] = ? and [refTable].[company] = ?</property>
         <NodeLayout
           Size="237.6,41.6"
           Id="Package\DFT- To perform insert update\insert or update to Datawarehouse"
-          TopLeft="483.999992787838,399.999994039536" />
+          TopLeft="503.999992489815,429.999993592501" />
         <EdgeLayout
           Id="Package\DFT- To perform insert update.Paths[Case 1]"
-          TopLeft="586.799992400408,361.599995231629">
+          TopLeft="631.599992847443,382.599994918704">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.0000003874302,38.399998807907"
+              EndConnector="-8.80000035762782,47.3999986737966"
               Start="0,0"
-              End="16.0000003874302,30.899998807907">
+              End="-8.80000035762782,39.8999986737966">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.1999994039535" />
+                    End="0,19.6999993368983" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.1999994039535"
-                    Point2="0,19.1999994039535"
-                    Point3="4,19.1999994039535" />
+                    Point1="0,19.6999993368983"
+                    Point2="0,23.6999993368983"
+                    Point3="-4,23.6999993368983" />
                   <mssgle:LineSegment
-                    End="12.0000003874302,19.1999994039535" />
+                    End="-4.80000035762782,23.6999993368983" />
                   <mssgle:CubicBezierSegment
-                    Point1="12.0000003874302,19.1999994039535"
-                    Point2="16.0000003874302,19.1999994039535"
-                    Point3="16.0000003874302,23.1999994039535" />
+                    Point1="-4.80000035762782,23.6999993368983"
+                    Point2="-8.80000035762782,23.6999993368983"
+                    Point3="-8.80000035762782,27.6999993368983" />
                   <mssgle:LineSegment
-                    End="16.0000003874302,30.899998807907" />
+                    End="-8.80000035762782,39.8999986737966" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.2180857437849,24.1999994039535,30.436171875,9.5537109375"
+              BoundingBox="-19.6180861163139,28.6999993368983,30.436171875,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
