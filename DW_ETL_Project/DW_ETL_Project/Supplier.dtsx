@@ -11,11 +11,35 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Supplier"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{FAB8C89F-08A6-4645-B036-D1459C7BD556}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{FBC9CB95-6B1C-4F7D-9ECA-04E35140A48C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQL2022.CRM_Goa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{43A0A751-8F35-465D-81CB-014B942E6E5A}"
+      DTS:ObjectName=".\SQL2022.CRM_Goa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_Goa;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Supplier-{43A0A751-8F35-465D-81CB-014B942E6E5A}.\SQL2022.CRM_Goa;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.\SQL2022.CRM_UK]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{81F69867-E03F-42E6-85DF-592FC79FA3A8}"
+      DTS:ObjectName=".\SQL2022.CRM_UK">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_UK;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Supplier-{81F69867-E03F-42E6-85DF-592FC79FA3A8}.\SQL2022.CRM_UK;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
       DTS:CreationName="OLEDB"
@@ -32,6 +56,410 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
+      DTS:refId="Package\DFT - Source to Staging Table(Goa)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FC8256A5-5AFB-49DD-8409-7A79DAE1B9C5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - Source to Staging Table(Goa)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa)"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived column company(Goa)"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Output].Columns[company]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Output].Columns[company]"
+                      name="company"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)"GOA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)"GOA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Goa Source Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Supplier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\SQL2022.CRM_Goa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\SQL2022.CRM_Goa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[suppliername]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[suppliername]"
+                      length="100"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[suppliername]"
+                      name="suppliername"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[active]"
+                      name="active"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[suppliername]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="suppliername" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      dataType="bool"
+                      name="active" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[suppliername]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[suppliername]"
+                      name="suppliername" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[active]"
+                      dataType="bool"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[active]"
+                      name="active" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Stage Data in Staging Goa Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_Supplier_Goa]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].Columns[suppliername]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="suppliername"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[suppliername]" />
+                    <inputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].Columns[active]"
+                      cachedDataType="bool"
+                      cachedName="active"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output].Columns[active]" />
+                    <inputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].Columns[company]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="company"
+                      externalMetadataColumnId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[company]"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Output].Columns[company]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[suppliername]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="suppliername" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      dataType="bool"
+                      name="active" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input].ExternalColumns[company]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="company" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - Source to Staging Table(Goa).Paths[Derived Column Output]"
+              endId="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - Source to Staging Table(Goa).Paths[OLE DB Source Output]"
+              endId="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa).Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - Source to Staging Table(Goa)\Goa Source Data.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate Staging table Goa"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -40,7 +468,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging table Goa"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -57,7 +485,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging table UK"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -66,6 +494,16 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C1321AA0-499D-4506-A4EB-86D8991695DC}"
+      DTS:From="Package\Truncate Staging table Goa"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT - Source to Staging Table(Goa)" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -77,7 +515,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="205.6,41.6"
           Id="Package\Truncate Staging table Goa"
@@ -86,8 +524,124 @@
           Size="200,41.6"
           Id="Package\Truncate Staging table UK"
           TopLeft="404.166644583975,63.4666669318414" />
+        <NodeLayout
+          Size="245.6,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)"
+          TopLeft="95.8333280972311,149.933332290716" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="219.883327482558,102.266666244798">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666660459174"
+              Start="0,0"
+              End="0,40.1666660459174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666660459174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DFT - Source to Staging Table(Goa)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)\Goa Source Data"
+          TopLeft="318.333315940368,27.7333331404792" />
+        <NodeLayout
+          Size="230.4,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table"
+          TopLeft="279.166651413673,198.466665286554" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\DFT - Source to Staging Table(Goa)\Derived column company(Goa)"
+          TopLeft="279.999984701475,114.399999204477" />
+        <EdgeLayout
+          Id="Package\DFT - Source to Staging Table(Goa).Paths[OLE DB Source Output]"
+          TopLeft="394.366650320921,69.3333331404792">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.0666660639975"
+              Start="0,0"
+              End="0,37.5666660639975">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5666660639975" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - Source to Staging Table(Goa).Paths[Derived Column Output]"
+          TopLeft="392.783318057574,155.999999204477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4666660820776"
+              Start="0,0"
+              End="0,34.9666660820776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9666660820776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Source to Staging Table(Goa)\Goa Source Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - Source to Staging Table(Goa)\Stage Data in Staging Goa Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
