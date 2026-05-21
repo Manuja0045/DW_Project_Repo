@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Supplier"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{9945EA79-EA3A-4DA6-B181-D0A35E0865FA}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{65EC8465-873D-425F-B1EA-DDFAFD6BC831}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -119,13 +119,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,50,1252)"GOA"</property>
+                          name="Expression">(DT_STR,50,1252)"Goa"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,50,1252)"GOA"</property>
+                          name="FriendlyExpression">(DT_STR,50,1252)"Goa"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
