@@ -1,55 +1,55 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/21/2026 4:25:54 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-3PCEPP5B"
   DTS:CreatorName="LAPTOP-3PCEPP5B\Manuja"
-  DTS:DTSID="{D9F7A0DE-45D9-4441-9571-8A247E393DEC}"
+  DTS:DTSID="{1E8D20A7-EA61-439C-A0AA-1D490EB7DF20}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="16393"
   DTS:ObjectName="Customer"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{02D75D23-7847-4003-B803-5CB41485F678}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{82B007CC-B7CE-4364-B4C1-45B02AE53E77}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQL2022.CRM_Goa]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0393D976-A3CE-476E-8079-E7D05FA6B07F}"
+      DTS:DTSID="{16FBE63B-99EC-4C7B-B3E2-5197DACE5B4F}"
       DTS:ObjectName=".\SQL2022.CRM_Goa">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_Goa;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{0393D976-A3CE-476E-8079-E7D05FA6B07F}.\SQL2022.CRM_Goa;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_Goa;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{16FBE63B-99EC-4C7B-B3E2-5197DACE5B4F}.\SQL2022.CRM_Goa;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQL2022.CRM_UK]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{FE941A99-E4FF-4291-830E-6261101404A1}"
+      DTS:DTSID="{5AB07ADE-EED2-479C-BE1C-BD4CA7780E6A}"
       DTS:ObjectName=".\SQL2022.CRM_UK">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_UK;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{FE941A99-E4FF-4291-830E-6261101404A1}.\SQL2022.CRM_UK;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=CRM_UK;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{5AB07ADE-EED2-479C-BE1C-BD4CA7780E6A}.\SQL2022.CRM_UK;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[.\SQL2022.DataWarehouse]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{CB370D4D-490D-4A13-AD9F-214C22C732FB}"
+      DTS:DTSID="{C0C84BAC-6AFC-4D79-944B-6AB98CA2B68A}"
       DTS:ObjectName=".\SQL2022.DataWarehouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{CB370D4D-490D-4A13-AD9F-214C22C732FB}.\SQL2022.DataWarehouse;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.\SQL2022;Initial Catalog=DataWarehouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Customer-{C0C84BAC-6AFC-4D79-944B-6AB98CA2B68A}.\SQL2022.DataWarehouse;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -59,7 +59,7 @@
       DTS:refId="Package\LOAD_GOA_TO_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{24F9FD53-40FB-4B0D-9D4D-BC44BC1A1731}"
+      DTS:DTSID="{0DCE50C3-2F77-44EF-A10F-FBB4621B82D8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="LOAD_GOA_TO_STG"
@@ -438,7 +438,7 @@ FROM Customer</property>
       DTS:refId="Package\LOAD_UK_TO_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{33B44658-C62B-4AF1-8BF4-F273ACB55FB0}"
+      DTS:DTSID="{BF692A78-3CCB-402F-9EC0-2D7105FAED7C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="LOAD_UK_TO_STG"
@@ -814,7 +814,7 @@ FROM Customer</property>
       DTS:refId="Package\MARK_INACTIVE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C70BADD1-A380-44F5-860A-76FEDC4E41E7}"
+      DTS:DTSID="{D53D4C06-94C8-4ABF-AF12-979AF4FCE302}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="MARK_INACTIVE"
@@ -823,7 +823,7 @@ FROM Customer</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CB370D4D-490D-4A13-AD9F-214C22C732FB}"
+          SQLTask:Connection="{C0C84BAC-6AFC-4D79-944B-6AB98CA2B68A}"
           SQLTask:SqlStatementSource="UPDATE DW_Customer&#xA;SET&#xA;    active_flag = 0,&#xA;    last_updated = GETDATE()&#xA;WHERE NOT EXISTS (&#xA;    SELECT 1&#xA;    FROM STG_Customer S&#xA;    WHERE S.id = DW_Customer.id&#xA;    AND S.company = DW_Customer.company&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -831,7 +831,7 @@ FROM Customer</property>
       DTS:refId="Package\MERGE_STG_TO_DW"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{43E2D82D-D931-4615-ACFF-92EB37835E14}"
+      DTS:DTSID="{BEB2AFC0-6058-4C5C-A7B7-13201D6D06D5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="MERGE_STG_TO_DW"
@@ -840,33 +840,15 @@ FROM Customer</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CB370D4D-490D-4A13-AD9F-214C22C732FB}"
+          SQLTask:Connection="{C0C84BAC-6AFC-4D79-944B-6AB98CA2B68A}"
           SQLTask:SqlStatementSource="MERGE DW_Customer AS TARGET&#xA;USING STG_Customer AS SOURCE&#xA;&#xA;ON TARGET.id = SOURCE.id&#xA;AND TARGET.company = SOURCE.company&#xA;&#xA;WHEN MATCHED THEN&#xA;    UPDATE SET&#xA;        TARGET.customer = SOURCE.customer,&#xA;        TARGET.active_flag = 1,&#xA;        TARGET.last_updated = GETDATE()&#xA;&#xA;WHEN NOT MATCHED THEN&#xA;    INSERT (&#xA;        id,&#xA;        customer,&#xA;        company,&#xA;        active_flag,&#xA;        created_date,&#xA;        last_updated&#xA;    )&#xA;    VALUES (&#xA;        SOURCE.id,&#xA;        SOURCE.customer,&#xA;        SOURCE.company,&#xA;        1,&#xA;        GETDATE(),&#xA;        GETDATE()&#xA;    );" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Script Task"
-      DTS:CreationName="Microsoft.ScriptTask"
-      DTS:Description="Script Task"
-      DTS:DTSID="{B17FA712-DA71-4F2F-9DB1-CEF546873FA1}"
-      DTS:ExecutableType="Microsoft.ScriptTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Script Task"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ScriptProject
-          Name="ST_77e8d3128a4544548c7e1747997dab78"
-          VSTAMajorVersion="17"
-          VSTAMinorVersion="0"
-          Language="CSharp" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Truncate_STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{557D589D-49C9-42F3-AB6D-5F7FC3A87E27}"
+      DTS:DTSID="{4FD95698-093C-4E32-8344-1735F23FBDAC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate_STG"
@@ -875,7 +857,7 @@ FROM Customer</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CB370D4D-490D-4A13-AD9F-214C22C732FB}"
+          SQLTask:Connection="{C0C84BAC-6AFC-4D79-944B-6AB98CA2B68A}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE STG_Customer;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -884,7 +866,7 @@ FROM Customer</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{EAA9842E-3987-435B-967C-226ACAB19C23}"
+      DTS:DTSID="{3EBD996B-5C23-47A5-89B5-41C534602B1C}"
       DTS:From="Package\Truncate_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -892,7 +874,7 @@ FROM Customer</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{0AFB3CFE-D232-47A0-A5FF-41DC352DA5B9}"
+      DTS:DTSID="{292A2403-6364-4093-B0F2-90CB54151900}"
       DTS:From="Package\LOAD_GOA_TO_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -900,7 +882,7 @@ FROM Customer</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E06DD672-BF75-4DAC-8054-1D09A7EE1928}"
+      DTS:DTSID="{7E2B2A8B-B5AE-4441-93FD-D3110C272A4F}"
       DTS:From="Package\LOAD_UK_TO_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -908,7 +890,7 @@ FROM Customer</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{2ABF6A12-168D-4A0B-BA0E-17D2C09978A7}"
+      DTS:DTSID="{3BCADD16-C98E-4645-8FA1-728A36F7A2E0}"
       DTS:From="Package\MERGE_STG_TO_DW"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -927,25 +909,25 @@ FROM Customer</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\LOAD_GOA_TO_STG"
-          TopLeft="391.761889476389,138.460316497482" />
+          Size="162.4,41.6"
+          Id="Package\MARK_INACTIVE"
+          TopLeft="395.833311705955,488.4285680321" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\LOAD_UK_TO_STG"
           TopLeft="394.047597517807,259.38095057725" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\MARK_INACTIVE"
-          TopLeft="395.833311705955,488.4285680321" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\MERGE_STG_TO_DW"
-          TopLeft="388.78569916281,378.857140222618" />
+          Size="183.2,41.6"
+          Id="Package\LOAD_GOA_TO_STG"
+          TopLeft="391.761889476389,138.460316497482" />
         <NodeLayout
           Size="146.4,41.6"
           Id="Package\Truncate_STG"
           TopLeft="411.801570921152,47.6666663351986" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\MERGE_STG_TO_DW"
+          TopLeft="388.78569916281,378.857140222618" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="484.18173019877,89.2666663351986">
@@ -1034,13 +1016,85 @@ FROM Customer</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130.4,41.6"
-          Id="Package\Script Task"
-          TopLeft="419.166643764411,565.933329397904" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\LOAD_UK_TO_STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\LOAD_UK_TO_STG\OLE DB Source"
+          TopLeft="569.999991506338,113.333331644535" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\LOAD_UK_TO_STG\Derived Column"
+          TopLeft="568.571420099054,254.285710496562" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\LOAD_UK_TO_STG\OLE DB Destination"
+          TopLeft="579.999991357327,424.285707963365" />
+        <EdgeLayout
+          Id="Package\LOAD_UK_TO_STG.Paths[OLE DB Source Output]"
+          TopLeft="645.485705802696,154.933331644535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.3523788520268"
+              Start="0,0"
+              End="0,91.8523788520268">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.8523788520268" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LOAD_UK_TO_STG.Paths[Derived Column Output]"
+          TopLeft="644.971420099054,295.885710496562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.6285712582727,128.399997466803"
+              Start="0,0"
+              End="20.6285712582727,120.899997466803">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.1999987334013" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60.1999987334013"
+                    Point2="0,64.1999987334013"
+                    Point3="4,64.1999987334013" />
+                  <mssgle:LineSegment
+                    End="16.6285712582727,64.1999987334013" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.6285712582727,64.1999987334013"
+                    Point2="20.6285712582727,64.1999987334013"
+                    Point3="20.6285712582727,68.1999987334013" />
+                  <mssgle:LineSegment
+                    End="20.6285712582727,120.899997466803" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\LOAD_GOA_TO_STG">
     <LayoutInfo>
@@ -1126,82 +1180,6 @@ FROM Customer</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\LOAD_UK_TO_STG">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\LOAD_UK_TO_STG\OLE DB Source"
-          TopLeft="569.999991506338,113.333331644535" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\LOAD_UK_TO_STG\Derived Column"
-          TopLeft="568.571420099054,254.285710496562" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\LOAD_UK_TO_STG\OLE DB Destination"
-          TopLeft="579.999991357327,424.285707963365" />
-        <EdgeLayout
-          Id="Package\LOAD_UK_TO_STG.Paths[OLE DB Source Output]"
-          TopLeft="645.485705802696,154.933331644535">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,99.3523788520268"
-              Start="0,0"
-              End="0,91.8523788520268">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91.8523788520268" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\LOAD_UK_TO_STG.Paths[Derived Column Output]"
-          TopLeft="644.971420099054,295.885710496562">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.6285712582727,128.399997466803"
-              Start="0,0"
-              End="20.6285712582727,120.899997466803">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.1999987334013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.1999987334013"
-                    Point2="0,64.1999987334013"
-                    Point3="4,64.1999987334013" />
-                  <mssgle:LineSegment
-                    End="16.6285712582727,64.1999987334013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.6285712582727,64.1999987334013"
-                    Point2="20.6285712582727,64.1999987334013"
-                    Point3="20.6285712582727,68.1999987334013" />
-                  <mssgle:LineSegment
-                    End="20.6285712582727,120.899997466803" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\LOAD_UK_TO_STG\OLE DB Source">
     <Properties>
