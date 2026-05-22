@@ -11,8 +11,8 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Customer"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{25334CD7-D82C-4AD4-A384-167D197CAEA0}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{02D75D23-7847-4003-B803-5CB41485F678}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -845,6 +845,24 @@ FROM Customer</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{B17FA712-DA71-4F2F-9DB1-CEF546873FA1}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_77e8d3128a4544548c7e1747997dab78"
+          VSTAMajorVersion="17"
+          VSTAMinorVersion="0"
+          Language="CSharp" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate_STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -909,25 +927,25 @@ FROM Customer</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\MARK_INACTIVE"
-          TopLeft="395.833311705955,488.4285680321" />
+          Size="183.2,41.6"
+          Id="Package\LOAD_GOA_TO_STG"
+          TopLeft="391.761889476389,138.460316497482" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\LOAD_UK_TO_STG"
           TopLeft="394.047597517807,259.38095057725" />
         <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\LOAD_GOA_TO_STG"
-          TopLeft="391.761889476389,138.460316497482" />
-        <NodeLayout
-          Size="146.4,41.6"
-          Id="Package\Truncate_STG"
-          TopLeft="411.801570921152,47.6666663351986" />
+          Size="162.4,41.6"
+          Id="Package\MARK_INACTIVE"
+          TopLeft="395.833311705955,488.4285680321" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\MERGE_STG_TO_DW"
           TopLeft="388.78569916281,378.857140222618" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Truncate_STG"
+          TopLeft="411.801570921152,47.6666663351986" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="484.18173019877,89.2666663351986">
@@ -1016,85 +1034,13 @@ FROM Customer</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\Script Task"
+          TopLeft="419.166643764411,565.933329397904" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\LOAD_UK_TO_STG">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package\LOAD_UK_TO_STG\OLE DB Source"
-          TopLeft="569.999991506338,113.333331644535" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\LOAD_UK_TO_STG\Derived Column"
-          TopLeft="568.571420099054,254.285710496562" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\LOAD_UK_TO_STG\OLE DB Destination"
-          TopLeft="579.999991357327,424.285707963365" />
-        <EdgeLayout
-          Id="Package\LOAD_UK_TO_STG.Paths[OLE DB Source Output]"
-          TopLeft="645.485705802696,154.933331644535">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,99.3523788520268"
-              Start="0,0"
-              End="0,91.8523788520268">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,91.8523788520268" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\LOAD_UK_TO_STG.Paths[Derived Column Output]"
-          TopLeft="644.971420099054,295.885710496562">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.6285712582727,128.399997466803"
-              Start="0,0"
-              End="20.6285712582727,120.899997466803">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.1999987334013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60.1999987334013"
-                    Point2="0,64.1999987334013"
-                    Point3="4,64.1999987334013" />
-                  <mssgle:LineSegment
-                    End="16.6285712582727,64.1999987334013" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.6285712582727,64.1999987334013"
-                    Point2="20.6285712582727,64.1999987334013"
-                    Point3="20.6285712582727,68.1999987334013" />
-                  <mssgle:LineSegment
-                    End="20.6285712582727,120.899997466803" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <TaskHost
     design-time-name="Package\LOAD_GOA_TO_STG">
     <LayoutInfo>
@@ -1180,6 +1126,82 @@ FROM Customer</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\LOAD_UK_TO_STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\LOAD_UK_TO_STG\OLE DB Source"
+          TopLeft="569.999991506338,113.333331644535" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\LOAD_UK_TO_STG\Derived Column"
+          TopLeft="568.571420099054,254.285710496562" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\LOAD_UK_TO_STG\OLE DB Destination"
+          TopLeft="579.999991357327,424.285707963365" />
+        <EdgeLayout
+          Id="Package\LOAD_UK_TO_STG.Paths[OLE DB Source Output]"
+          TopLeft="645.485705802696,154.933331644535">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.3523788520268"
+              Start="0,0"
+              End="0,91.8523788520268">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.8523788520268" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LOAD_UK_TO_STG.Paths[Derived Column Output]"
+          TopLeft="644.971420099054,295.885710496562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.6285712582727,128.399997466803"
+              Start="0,0"
+              End="20.6285712582727,120.899997466803">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.1999987334013" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60.1999987334013"
+                    Point2="0,64.1999987334013"
+                    Point3="4,64.1999987334013" />
+                  <mssgle:LineSegment
+                    End="16.6285712582727,64.1999987334013" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.6285712582727,64.1999987334013"
+                    Point2="20.6285712582727,64.1999987334013"
+                    Point3="20.6285712582727,68.1999987334013" />
+                  <mssgle:LineSegment
+                    End="20.6285712582727,120.899997466803" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\LOAD_UK_TO_STG\OLE DB Source">
     <Properties>
